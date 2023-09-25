@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+body {
+  background: purple;
+  color: gold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.test {
+  height: 400px;
+  width: 400px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+ .mov-img {
+  float: left;
+  width:  200px;
+  height: 250px;
+  object-fit: cover;
+  padding: 2px;
+  border: 1px solid teal;
+ }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
+ .fav-img {
+  float: left;
+  width:  100px;
+  height: 150px;
+  object-fit: cover;
+  padding: 2px;
+  border: 1px solid teal;
+ }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+ .heart {
+  background: violet;
+  border: 2px solid gold;
+  margin: 87px;
+  font-size: 20px;
+  outline: none;
+  color: black;
+  width:  200px;
+  top: -85px;
+  left: -88px;
+  position: absolute;
+ }
+
+ .fullHeart {
+  background: purple;
+  border: 2px solid gold;
+  margin: 87px;
+  font-size: 20px;
+  outline: none;
+  color: red;
+  width:  200px;
+  top: -85px;
+  left: -88px;
+  position: absolute;
+ }
+
+ .col-sm-3 {
+  
+  position: relative;
+ }
+
+ .label {
+  font-size: 20px;
+  position: absolute;
+  
+ }
+
+ .navi {
+  background-color: gold;
+  color: purple;
+  border: 2px solid magenta;
+  padding: 30px;
+ }
+
+ .ri-heart-add-line {
+  display: inline;
+ }
+
+ .fav-label {
+  display: inline;
+  font-family: Sans-serif;
+  font-size: 17px;
+ }
+
+ .trash {
+  display: inline;
+  font-family: Sans-serif;
+  font-size: 10px;
+ }

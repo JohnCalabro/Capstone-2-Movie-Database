@@ -12,13 +12,9 @@ const FilmDetails = () => {
     const getFilm = async (id) => {
       const url = `https://www.omdbapi.com/?i=${id}&apikey=dcb23672`
       const response = await axios.get(url);
-      console.log(response.data.Title)
-      console.log(response.data.Actors)
       
-     
       if(response.data){
         setDetails(response.data) 
-        console.log(details)
       }
          
     }
@@ -44,21 +40,6 @@ const FilmDetails = () => {
 export default FilmDetails;
 
 
-// https://www.omdbapi.com/?i=tt3896198&apikey=dcb23672
 
 
-// useEffect(() => {
-//     const getFilm = async (search) => {
-//       const url = `https://www.omdbapi.com/?s=${search}&apikey=dcb23672`
-//       const response = await axios.get(url);
-//       console.log(response.data.Search)
-      
-     
-//       if(response.data.Search){
-//         setFilms(response.data.Search) 
-//       }
-         
-//     }
-//     getFilm(search)
-    
-//   }, [search])
+

@@ -1,32 +1,29 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-// import SearchMovie from "./SearchMovie";
-import Details from "./Details";
+import React, {useContext} from "react";
+import "../App.css";
+import UserContext from "../context/UserContext";
+import FavButton from "./FavButton";
+import FavDisplay from "./FavDisplay";
 
 
-const MovieList = ( {movies} ) => {
 
-   console.log(movies)
-
+const MovieList = ( {movies, search, favs, setFavorites} ) => {
+    
+   const user = useContext(UserContext);
+  
     return (
         <>
-            <h1>List of Films</h1>
-            <Routes>
-                 <Route path='/movie' element={ <Details />}></Route>
-            </Routes>
-            
-            {/* <SearchMovie search={search} setSearch={setSearch}/> */}
-            {movies.map(movie => <div>
-                {/* <Link to="/movie"> <img src={movie.Poster}/></Link> */}
-                {/* <img src={movie.Poster}/> */}
+            {user === null ? '' : <FavDisplay favList={favs} setFavorites={setFavorites}/>}
+            <h1>Search Results</h1>
+           
+            {movies.map(movie => <div className= "col-sm-3">
+                <div>
+                <Link to={`/movie/${movie.imdbID}`}> <img className="mov-img"src={movie.Poster} alt={movie.Title}/>
                 
-                {/* <BrowserRouter> */}
-                <Link to={`/movie/${movie.imdbID}`}> <img src={movie.Poster}/></Link>
-                    {/* <Routes> */}
-                        {/* <Route exact path='/movie' element={ <Details />}></Route> */}
-                    {/* </Routes> */}
-                {/* </BrowserRouter> */}
-               
-            
+                </Link>
+                {user === null ? '' : <FavButton movie={movie} search={search} favForClick={favs} setFavorites={setFavorites}/>}
+                </div>
+                        
             </div>)}
         </>
     )
